@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  src: url("./assets/fonts/JetBrainsMono-VariableFont_wght.ttf") format("truetype-variations");
+  font-display: swap;
+}
+:root {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+
+  @theme{
+    --color-grey-200: #E6E5EA;
+    --color-grey-600: #817D92;
+    --color-grey-700: #54535B;
+    --color-grey-800: #24232C;
+    --color-grey-850: #18171F;
+    --color-grey-900: #14131B;
+    --color-gray-950: #08070B;
+
+    --color-green-200: #A4FFAF;
+
+    --color-yellow-300: #F8CD65;
+
+    --color-orange-400: #FB7C58;
+
+    --color-red-500: #F64A4A;
+
+    --color-gradient-1: linear-gradient(to right, var(--color-gray-900), var(--color-gray-950));
+
+    --font-weight-text-preset-1: 700;
+    --text-text-preset-1: 32px;
+    --leading-text-preset-1: 42px;
+
+    --font-weight-text-preset-2: 700;
+    --text-text-preset-2: 24px;
+    --leading-text-preset-2: 32px;
+
+    --font-weight-text-preset-3: 700;
+    --text-text-preset-3: 18px;
+    --leading-text-preset-3: 24px;
+
+    --font-weight-text-preset-4: 700;
+    --text-text-preset-4: 16px;
+    --leading-text-preset-4: 20px;
+  }
+}
+
