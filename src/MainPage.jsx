@@ -116,7 +116,7 @@ const MainPage = () => {
                 <div className={"flex flex-col gap-8 max-w-135 mx-auto w-full"}>
                     <h1 className={"text-center text-gray-600 text-text-preset-4 sm:text-text-preset-2 font-text-preset-4 sm:font-text-preset-2 leading-text-preset-4 sm:leading-text-preset-2"}>Password Generator</h1>
                     <form className={"flex flex-col gap-6"}>
-                        <div className={"py-4 px-8 bg-gray-800 flex justify-between"}>
+                        <div className={"py-4 px-8 bg-grey-800 flex justify-between"}>
                             <input type={"text"} readOnly className={"outline-none flex-1 min-w-0 placeholder:text-gray-700 text-grey-200 text-text-preset-1 font-text-preset-1 leading-text-preset-1"} placeholder={"P4$5W0rD!"} value={password}/>
                             <div className={"flex items-center gap-4"}>
                                 {isCopied && (
@@ -129,7 +129,7 @@ const MainPage = () => {
 
                         </div>
 
-                        <div className={"py-6 px-8 bg-gray-800"}>
+                        <div className={"py-6 px-8 bg-grey-800"}>
                             <div className={"flex flex-col gap-8"}>
                                 <div className={"flex flex-col gap-4"}>
                                     <div className={"flex items-center justify-between"}>
