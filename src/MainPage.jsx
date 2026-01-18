@@ -7,6 +7,7 @@ const MainPage = () => {
     const [isChecked, setIsChecked] = useState([]);
     const [isDragging, setIsDragging] = useState(false)
     const [password, setPassword] = useState("")
+    const [isCopied, setIsCopied] = useState(false)
     const [length, setLength] = useState(10)
     const trackRef = useRef(null)
     const percent = ((length - MIN) / (MAX - MIN)) * 100
@@ -79,6 +80,15 @@ const MainPage = () => {
         e.preventDefault()
         setPassword(handleGeneratePassword(length, isChecked))
     }
+
+    const handleCopyPasswordToClipboard = async () => {
+        if(!password) return;
+        try {
+            await navigator.clipboard.writeText(password);
+            setIsCopied(true);
+        }catch(err) {
+        }
+    }
     const CONDITIONS_OPTIONS = [
         {
             key: 1,
@@ -107,10 +117,16 @@ const MainPage = () => {
                     <h1 className={"text-center text-gray-600 text-text-preset-4 sm:text-text-preset-2 font-text-preset-4 sm:font-text-preset-2 leading-text-preset-4 sm:leading-text-preset-2"}>Password Generator</h1>
                     <form className={"flex flex-col gap-6"}>
                         <div className={"py-4 px-8 bg-gray-800 flex justify-between"}>
-                            <input type={"text"} readOnly className={"outline-none flex-1 min-w-0 text-gray-700 text-text-preset-1 font-text-preset-1 leading-text-preset-1"} placeholder={"P4$5W0rD!"} value={password}/>
-                            <div className={"flex justify-center items-center cursor-pointer"}>
-                                <img src={CopyIcon} alt={"copy-icon"}/>
+                            <input type={"text"} readOnly className={"outline-none flex-1 min-w-0 placeholder:text-gray-700 text-grey-200 text-text-preset-1 font-text-preset-1 leading-text-preset-1"} placeholder={"P4$5W0rD!"} value={password}/>
+                            <div className={"flex items-center gap-4"}>
+                                {isCopied && (
+                                    <p className={"text-green-200 text-text-preset-3 font-text-preset-3 leading-text-preset-3"}>COPIED</p>
+                                )}
+                                <button type={"button"} className={"flex justify-center items-center"} onClick={handleCopyPasswordToClipboard}>
+                                    <img src={CopyIcon} alt={"copy-icon"}/>
+                                </button>
                             </div>
+
                         </div>
 
                         <div className={"py-6 px-8 bg-gray-800"}>

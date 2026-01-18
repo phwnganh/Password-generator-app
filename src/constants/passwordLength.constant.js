@@ -1,4 +1,4 @@
-export const MIN = 2;
+export const MIN = 0;
 export const MAX = 20;
 
 export const CHAR_POOLS = {
