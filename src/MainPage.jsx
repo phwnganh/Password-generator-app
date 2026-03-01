@@ -122,7 +122,7 @@ const MainPage = () => {
                                 {isCopied && (
                                     <p className={"text-green-200 text-text-preset-3 font-text-preset-3 leading-text-preset-3"}>COPIED</p>
                                 )}
-                                <button type={"button"} className={"flex justify-center items-center"} onClick={handleCopyPasswordToClipboard}>
+                                <button type={"button"} aria-label="Copy text to clipboard" className={"flex justify-center items-center"} onClick={handleCopyPasswordToClipboard}>
                                     <img src={CopyIcon} alt={"copy-icon"}/>
                                 </button>
                             </div>
@@ -146,8 +146,8 @@ const MainPage = () => {
                                     {CONDITIONS_OPTIONS.map((option) => {
                                         const checkedOptions = isChecked.includes(option.key)
                                         return (
-                                            <div key={option.key} className={"flex items-center gap-6"}>
-                                                <div onClick={() => handleChecked(option.key)}
+                                            <div key={option.key} className={"flex items-center gap-6 cursor-pointer"}>
+                                                <div aria-label={"Include uppercase letters"} role={"checkbox"} onClick={() => handleChecked(option.key)}
                                                      className={`w-5 h-5 border-2 border-grey-200 relative cursor-pointer ${checkedOptions && "bg-green-200"}`}>
                                                     {checkedOptions && <div
                                                         className={"flex justify-center items-center absolute inset-0"}>
